@@ -7,8 +7,10 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"log"
+	"math/rand"
 	"net/http"
 	"runtime/debug"
+	"time"
 )
 
 // @Summary 步数更新
@@ -17,8 +19,8 @@ import (
 // @Accept       json
 // @Produce      json
 // @Param “用户和房间信息” body string true "json"
-// @Router /throwDice [post]
-func ThrowDice(c *gin.Context) {
+// @Router /updateInfo [post]
+func UpdateInfo(c *gin.Context) {
 	defer func() {
 		err := recover()
 		if err != nil {
@@ -54,6 +56,22 @@ func ThrowDice(c *gin.Context) {
 		"data": result,
 	})
 
+}
+
+// @Summary 掷骰子
+// @Description 返回骰子数
+// @Tags 蛇梯游戏模块
+// @Accept       json
+// @Produce      json
+// @Router /throwDice [post]
+func ThrowDice(c *gin.Context) {
+	rand.Seed(time.Now().UnixNano())
+	result := rand.Intn(6) + 1
+	c.JSON(http.StatusOK, gin.H{
+		"code": 1,
+		"msg":  "成功",
+		"data": result,
+	})
 }
 
 // recover错误，转string
