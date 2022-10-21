@@ -1,0 +1,35 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/throwDice": {
+            "post": {
+                "description": "更新房间内游戏玩家的步数",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "蛇梯游戏模块"
+                ],
+                "summary": "步数更新",
+                "parameters": [
+                    {
+                        "description": "json",
+                        "name": "“用户和房间信息”",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
+}

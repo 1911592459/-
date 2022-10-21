@@ -1,0 +1,22 @@
+info:
+  contact: {}
+paths:
+  /throwDice:
+    post:
+      consumes:
+      - application/json
+      description: 更新房间内游戏玩家的步数
+      parameters:
+      - description: json
+        in: body
+        name: “用户和房间信息”
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: 步数更新
+      tags:
+      - 蛇梯游戏模块
+swagger: "2.0"
