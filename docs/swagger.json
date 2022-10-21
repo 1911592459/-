@@ -6,6 +6,22 @@
     "paths": {
         "/throwDice": {
             "post": {
+                "description": "返回骰子数",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "蛇梯游戏模块"
+                ],
+                "summary": "掷骰子",
+                "responses": {}
+            }
+        },
+        "/updateInfo": {
+            "post": {
                 "description": "更新房间内游戏玩家的步数",
                 "consumes": [
                     "application/json"

@@ -24,6 +24,7 @@ func SetupRouter() *gin.Engine {
 	// v1
 	v1Group := r.Group("v1")
 	{
+		v1Group.POST("/updateInfo", controller.UpdateInfo)
 		v1Group.POST("/throwDice", controller.ThrowDice)
 	}
 	return r

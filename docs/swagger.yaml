@@ -5,6 +5,17 @@ paths:
     post:
       consumes:
       - application/json
+      description: 返回骰子数
+      produces:
+      - application/json
+      responses: {}
+      summary: 掷骰子
+      tags:
+      - 蛇梯游戏模块
+  /updateInfo:
+    post:
+      consumes:
+      - application/json
       description: 更新房间内游戏玩家的步数
       parameters:
       - description: json
